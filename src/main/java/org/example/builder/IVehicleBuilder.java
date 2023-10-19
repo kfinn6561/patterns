@@ -1,10 +1,13 @@
 package org.example.builder;
 
 public interface IVehicleBuilder {
-  public IVehicleBuilder setWindows(int windows);
+  IVehicleBuilder setName(String name);
 
-  public IVehicleBuilder setDoors(int doors);
+  IVehicleBuilder setDoors(int doors);
 
-  public IVehicleBuilder setFuelType(FuelType fuelType);
-  public IVehicleBuilder setTankSize(int tankSize);
+  IVehicleBuilder setFuelType(FuelType fuelType);
+
+  IVehicleBuilder setTankSize(double tankSize);
+
+  IVehicleBuilder setEngineSize(double engineSize);
 }
