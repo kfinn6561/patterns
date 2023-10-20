@@ -34,6 +34,10 @@ public class CarUtils {
     return fuelConsumptionAdjuster * engineSize * sizeAdjuster;
   }
 
+  public static double calculateMaxSpeed(double engineSize) {
+      return MAX_SPEED * engineSize;
+  }
+
   public static double calculateAcceleration(
       FuelType fuelType, double engineSize, double currentSpeed) {
     double accelerationAdjuster =
@@ -44,7 +48,7 @@ public class CarUtils {
           case ELECTRIC -> 2.0;
         };
 
-    double terminalVelocity = MAX_SPEED * engineSize;
+    double terminalVelocity = calculateMaxSpeed(engineSize);
 
     return (terminalVelocity - currentSpeed) * accelerationAdjuster;
   }
