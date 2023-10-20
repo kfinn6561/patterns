@@ -35,7 +35,7 @@ public class CarUtils {
   }
 
   public static double calculateMaxSpeed(double engineSize) {
-      return MAX_SPEED * engineSize;
+    return MAX_SPEED * engineSize;
   }
 
   public static double calculateAcceleration(
