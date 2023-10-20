@@ -10,7 +10,7 @@ public class CarManual {
   private final double maxSpeed;
 
   public CarManual(
-      String name, FuelType fuelType, double engineSize, int numberOfDoors, int tankSize) {
+      String name, FuelType fuelType, double engineSize, int numberOfDoors, double tankSize) {
     this.name = name;
     this.fuelType = fuelType;
     this.engineSize = engineSize;
