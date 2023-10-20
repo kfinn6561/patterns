@@ -13,7 +13,8 @@ public class Car {
   private double currentPosition;
   private double currentFuel;
 
-  public Car(String name, FuelType fuelType, double engineSize, int numberOfDoors, int tankSize) {
+  public Car(
+      String name, FuelType fuelType, double engineSize, int numberOfDoors, double tankSize) {
     this.name = name;
     this.fuelType = fuelType;
     this.engineSize = engineSize;
