@@ -1,7 +1,7 @@
 package org.example.builder;
 
 public class CarUtils {
-  public static double MAX_SPEED = 100.0;
+  public static double MAX_SPEED = 20.0;
 
   public static double CalculateFuelPrice(FuelType fuelType, double amount) {
     double costPerUnit =
