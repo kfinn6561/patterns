@@ -1,7 +1,7 @@
 package org.example.builder;
 
 public class BuilderExampleUsage{
-    public static void ExampleUsage{
+    public static void ExampleUsage(){
         Director director = new Director();
         CarBuilder carBuilder = new CarBuilder();
         CarManualBuilder manualBuilder = new CarManualBuilder();
