@@ -1,23 +1,27 @@
 package org.example.builder;
 
-public class BuilderExampleUsage{
-    public static void ExampleUsage(){
-        Director director = new Director();
-        CarBuilder carBuilder = new CarBuilder();
-        CarManualBuilder manualBuilder = new CarManualBuilder();
+public class BuilderExampleUsage {
+  public static void ExampleUsage() {
+    Director director = new Director();
+    CarBuilder carBuilder = new CarBuilder();
+    CarManualBuilder manualBuilder = new CarManualBuilder();
 
-Car mercedes = director.buildMercedes(carBuilder).build();
-CarManual mercedesManual=director.buildMercedes(manualBuilder).build();
+    director.buildMercedes(carBuilder);
+    Car mercedes = carBuilder.build();
 
-System.out.Println(mercedesManual.getDescription());
+    director.buildMercedes(manualBuilder);
+    CarManual mercedesManual = manualBuilder.build();
 
-double costOfFuel = mercedes.fillTank();
+    System.out.println(mercedesManual.getDescription());
 
-System.out.Println(String.format("filling the tank cost £%.2f",costOfFuel));
-while (mercedes.DriveStep(0.1)){
-    System.out.Println(mercedes.Description());
-}
-System.out.Println(String.format("Mercedes traveled a total distance of %.2d miles on a full tank, reaching a final speed of %.2d mph.", mercedes.getCurrentPosition(),mercedes.getCurrentSpeed()))
+    double costOfFuel = mercedes.fillTank();
 
+    System.out.printf("filling the tank cost £%.2f%n", costOfFuel);
+    while (mercedes.DriveStep(0.1)) {
+      System.out.println(mercedes.Description());
     }
+    System.out.printf(
+        "Mercedes traveled a total distance of %.2f miles on a full tank, reaching a final speed of %.2f mph.%n",
+        mercedes.getCurrentPosition(), mercedes.getCurrentSpeed());
+  }
 }

@@ -8,12 +8,12 @@ public class CarBuilder implements IVehicleBuilder {
   private double tankSize;
 
   @Override
-  public void reset(){
-    this.name=null;
-    this.fuelType=null;
-    this.engineSize= 0.0;
-    this.numberOfDoors= 0;
-    this.tankSize= 0.0;
+  public void reset() {
+    this.name = null;
+    this.fuelType = null;
+    this.engineSize = 0.0;
+    this.numberOfDoors = 0;
+    this.tankSize = 0.0;
   }
 
   @Override

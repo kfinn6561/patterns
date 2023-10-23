@@ -1,9 +1,11 @@
 package org.example.builder;
 
-public class BuilderTest{
+import org.junit.jupiter.api.Test;
 
-    @Test
-    publc void TestExampleUsage(){
-        BuilderExampleUsage.ExampleUsage();
-    }
+public class BuilderTest {
+
+  @Test
+  public void TestExampleUsage() {
+    BuilderExampleUsage.ExampleUsage();
+  }
 }
