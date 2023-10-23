@@ -6,6 +6,15 @@ public class CarManualBuilder implements IVehicleBuilder {
   private double engineSize;
   private int numberOfDoors;
   private double tankSize;
+  
+@Override
+  public void reset(){
+    this.name=null;
+    this.fuelType=null;
+    this.engineSize= 0.0;
+    this.numberOfDoors= 0;
+    this.tankSize= 0.0;
+  }
 
   @Override
   public IVehicleBuilder setName(String name) {

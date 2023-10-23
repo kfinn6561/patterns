@@ -2,6 +2,7 @@ package org.example.builder;
 
 publc class Director{
     publc IVehicleBuilder buildMercedes(IVehicleBuilder builder){
+        builder.reset();
         return builder
         .setName("Mercedes")
         .setDoors(5)
@@ -11,6 +12,7 @@ publc class Director{
     }
 
 publc IVehicleBuilder buildTesla(IVehicleBuilder builder){
+    builder.reset();
         return builder
         .setName("Tesla")
         .setDoors(5)
@@ -19,6 +21,7 @@ publc IVehicleBuilder buildTesla(IVehicleBuilder builder){
         .setEngineSize(30.0)
     }
     publc IVehicleBuilder buildPrius(IVehicleBuilder builder){
+        builder.reset();
         return builder
         .setName("Toyota Prius")
         .setDoors(3)
@@ -27,6 +30,7 @@ publc IVehicleBuilder buildTesla(IVehicleBuilder builder){
         .setEngineSize(5.0)
     }
     publc IVehicleBuilder buildTransit(IVehicleBuilder builder){
+        builder.reset();
         return builder
         .setName("Ford Transit van")
         .setDoors(7)

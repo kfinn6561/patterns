@@ -1,6 +1,7 @@
 package org.example.builder;
 
 public interface IVehicleBuilder {
+  void reset();
 
   IVehicleBuilder setName(String name);
 
