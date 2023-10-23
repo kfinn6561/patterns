@@ -45,6 +45,10 @@ public class Car {
     return currentFuel;
   }
 
+  public String getName() {
+    return name;
+  }
+
   public boolean DriveStep(double dt) {
     double fuelUsed = dt * this.fuelConsumption;
 
@@ -65,13 +69,14 @@ public class Car {
 
   public String Description() {
     return String.format(
-        "%d door, %.2f litre %s %s with a %.2fL tank. Currently doing %.1f miles per hour, %.1f miles from home",
+        "%d door, %.2f litre %s %s with a %.2fL tank. Currently doing %.1f miles per hour, %.1f miles from home. Remaining fuel %.2fL",
         this.numberOfDoors,
         this.engineSize,
         this.fuelType,
         this.name,
         this.tankSize,
         this.currentSpeed,
-        this.currentPosition);
+        this.currentPosition,
+        this.currentFuel);
   }
 }

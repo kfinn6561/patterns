@@ -6,6 +6,9 @@ public class BuilderTest {
 
   @Test
   public void TestExampleUsage() {
-    BuilderExampleUsage.ExampleUsage();
+    BuilderExampleUsage.ExampleUsage("mercedes");
+    BuilderExampleUsage.ExampleUsage("tesla");
+    BuilderExampleUsage.ExampleUsage("prius");
+    BuilderExampleUsage.ExampleUsage("transit");
   }
 }

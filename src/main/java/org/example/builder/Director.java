@@ -1,6 +1,15 @@
 package org.example.builder;
 
 public class Director {
+  public void build(String carName, IVehicleBuilder builder) {
+    switch (carName) {
+      case "mercedes" -> buildMercedes(builder);
+      case "tesla" -> buildTesla(builder);
+      case "prius" -> buildPrius(builder);
+      case "transit" -> buildTransit(builder);
+    }
+  }
+
   public void buildMercedes(IVehicleBuilder builder) {
     builder.reset();
     builder
