@@ -5,6 +5,11 @@ public class Singleton {
   private final double id;
 
   private Singleton() {
+    try {
+      Thread.sleep(100); //artificial sleep to righlight race conditions
+    } catch (InterruptedException e) {
+      throw new RuntimeException(e);
+    }
     this.id = Math.random();
   }
 
