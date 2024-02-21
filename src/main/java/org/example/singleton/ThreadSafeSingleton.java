@@ -10,7 +10,7 @@ public class ThreadSafeSingleton {
 
   private ThreadSafeSingleton() {
     try {
-      Thread.sleep(100); //artificial sleep to righlight race conditions
+      Thread.sleep(100); // artificial sleep to righlight race conditions
     } catch (InterruptedException e) {
       throw new RuntimeException(e);
     }
