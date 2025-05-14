@@ -22,7 +22,7 @@ public class Truck implements Transport {
             try {
                 System.out.println("Vroom Vroom!");
                 // Simulate time passing (e.g., 5 seconds)
-                Thread.sleep((int)(TRUCK_SPEED*origin.distanceTo(destination) * 1000 / 60)); // Convert speed to time
+                Thread.sleep((int)(origin.distanceTo(destination) * 1000 / (TRUCK_SPEED))); // Convert speed to time
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt(); // Restore interrupted status
             } finally {

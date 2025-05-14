@@ -1,12 +1,14 @@
 package org.example.factory;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public abstract class LogisticsHub {
-    private List<Transport> transportPool = List.of();
+    private ArrayList<Transport> transportPool = new ArrayList<>();
 
-    public LogisticsHub() {
+    public List<Transport> getTransportPool() {
+        return transportPool;
     }
 
     public void deliverPackage(Location origin, Location destination) {
