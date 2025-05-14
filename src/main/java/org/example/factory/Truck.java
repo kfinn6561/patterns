@@ -4,6 +4,8 @@ public class Truck implements Transport {
     private Location currentLocation;
     private boolean busy;
 
+    private static final float TRUCK_SPEED = 60.0f; // Speed in km/h
+
     public Truck(Location currentLocation) {
         this.currentLocation = currentLocation;
         this.busy = false;
@@ -19,7 +21,7 @@ public class Truck implements Transport {
         new Thread(() -> {
             try {
                 // Simulate time passing (e.g., 5 seconds)
-                Thread.sleep(5000);
+                Thread.sleep((int)(TRUCK_SPEED*origin.distanceTo(destination) * 1000 / 60)); // Convert speed to time
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt(); // Restore interrupted status
             } finally {
