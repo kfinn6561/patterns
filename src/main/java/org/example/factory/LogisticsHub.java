@@ -3,7 +3,7 @@ package org.example.factory;
 import java.util.List;
 import java.util.Optional;
 
-public class LogisticsHub {
+public abstract class LogisticsHub {
     private List<Transport> transportPool = List.of();
 
     public LogisticsHub() {
@@ -32,7 +32,5 @@ public class LogisticsHub {
     }
 
     // This is the factory method
-    private Transport createTransport(Location origin) {
-        return new Truck(origin);
-    }
+    protected abstract Transport createTransport(Location origin);
 }
