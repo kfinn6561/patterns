@@ -3,16 +3,15 @@ package org.example.factory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.awt.*;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GroundLogisticsHubTest {
-    private GroundLogisticsHub groundLogisticsHub;
+class SeaLogisticsHubTest {
+    private SeaLogisticsHub seaLogisticsHub;
     @BeforeEach
     void setUp() {
-        groundLogisticsHub = new GroundLogisticsHub();
+        seaLogisticsHub = new SeaLogisticsHub();
     }
 
     @Test
@@ -20,11 +19,11 @@ class GroundLogisticsHubTest {
         Location origin = new Location("Origin", 0, 0);
         Location destination = new Location("Destination", 10, 10);
 
-        groundLogisticsHub.deliverPackage(origin, destination);
+        seaLogisticsHub.deliverPackage(origin, destination);
 
-        List<Transport> transportPool = groundLogisticsHub.getTransportPool();
+        List<Transport> transportPool = seaLogisticsHub.getTransportPool();
         assertEquals(1, transportPool.size());
-        assertInstanceOf(Truck.class, transportPool.get(0));
+        assertInstanceOf(Ship.class, transportPool.get(0));
     }
 
     @Test
@@ -33,13 +32,13 @@ class GroundLogisticsHubTest {
         Location destination1 = new Location("Destination1", 10, 10);
         Location destination2 = new Location("Destination2", 20, 20);
 
-        groundLogisticsHub.deliverPackage(origin, destination1);
-        groundLogisticsHub.deliverPackage(origin, destination2);
+        seaLogisticsHub.deliverPackage(origin, destination1);
+        seaLogisticsHub.deliverPackage(origin, destination2);
 
-        List<Transport> transportPool = groundLogisticsHub.getTransportPool();
+        List<Transport> transportPool = seaLogisticsHub.getTransportPool();
         assertEquals(2, transportPool.size());
-        assertInstanceOf(Truck.class, transportPool.get(0));
-        assertInstanceOf(Truck.class, transportPool.get(1));
+        assertInstanceOf(Ship.class, transportPool.get(0));
+        assertInstanceOf(Ship.class, transportPool.get(1));
     }
 
     @Test
@@ -48,7 +47,7 @@ class GroundLogisticsHubTest {
         Location destination1 = new Location("Destination1", 10, 10);
         Location destination2 = new Location("Destination2", 20, 20);
 
-        groundLogisticsHub.deliverPackage(origin, destination1);
+        seaLogisticsHub.deliverPackage(origin, destination1);
 
         // Simulate some delay
         try {
@@ -57,10 +56,11 @@ class GroundLogisticsHubTest {
             Thread.currentThread().interrupt();
         }
 
-        groundLogisticsHub.deliverPackage(origin, destination2);
+        seaLogisticsHub.deliverPackage(origin, destination2);
 
-        List<Transport> transportPool = groundLogisticsHub.getTransportPool();
+        List<Transport> transportPool = seaLogisticsHub.getTransportPool();
         assertEquals(1, transportPool.size());
-        assertInstanceOf(Truck.class, transportPool.get(0));
+        assertInstanceOf(Ship.class, transportPool.get(0));
     }
+
 }
