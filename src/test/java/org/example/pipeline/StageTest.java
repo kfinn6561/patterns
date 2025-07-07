@@ -1,18 +1,25 @@
 package org.example.pipeline;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.Answers;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
-@ExtendWith(MockitoExtension.class)
 class StageTest {
-     @Mock private Stage stage1;
-     @Mock private Stage stage2;
-     @Mock private Stage stage3;
+     private Stage stage1;
+     private Stage stage2;
+     private Stage stage3;
 
+     @BeforeEach
+        void setUp() {
+         stage1 = mock(Stage.class,withSettings().defaultAnswer(Answers.CALLS_REAL_METHODS));
+            stage2 = mock(Stage.class,withSettings().defaultAnswer(Answers.CALLS_REAL_METHODS));
+            stage3 = mock(Stage.class,withSettings().defaultAnswer(Answers.CALLS_REAL_METHODS));
+        }
 
      @Test
         void testCreateChain() {
@@ -32,7 +39,7 @@ class StageTest {
             Data result = chain.process(inputData);
 
             // then
-            assert result.equals(dataAfterStage3);
+            assertEquals(dataAfterStage3, result);
         }
 
 }
