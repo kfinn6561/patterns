@@ -1,4 +1,4 @@
 package org.example.pipeline;
 
-public record Data() {
+public record Data(String content) {
 }
